@@ -29,16 +29,14 @@ export default function ProfilePage() {
     ]);
   };
 
-  // 获取用户头像URL
   const getUserAvatar = () => {
     if (user?.imageUrl) {
       return user.imageUrl;
     }
-    // 如果没有头像，使用默认头像
+
     return "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face";
   };
 
-  // 获取用户姓名
   const getUserName = () => {
     if (user?.fullName) {
       return user.fullName;
@@ -49,7 +47,6 @@ export default function ProfilePage() {
     return "User";
   };
 
-  // 获取用户邮箱
   const getUserEmail = () => {
     return user?.primaryEmailAddress?.emailAddress || "No email available";
   };
@@ -88,108 +85,6 @@ export default function ProfilePage() {
               </Text>
               <Text className="text-gray-600 text-base">{getUserEmail()}</Text>
             </View>
-
-            {/* User Stats */}
-            <View className="flex-row justify-around mb-6">
-              <View className="items-center">
-                <Text className="text-2xl font-bold text-blue-600">0</Text>
-                <Text className="text-gray-600 text-sm">Locations</Text>
-              </View>
-              <View className="items-center">
-                <Text className="text-2xl font-bold text-green-600">0</Text>
-                <Text className="text-gray-600 text-sm">Favorites</Text>
-              </View>
-              <View className="items-center">
-                <Text className="text-2xl font-bold text-purple-600">0</Text>
-                <Text className="text-gray-600 text-sm">Days</Text>
-              </View>
-            </View>
-          </View>
-
-          {/* Settings Section */}
-          <View className="bg-white rounded-2xl shadow-lg shadow-gray-200 mb-6">
-            <View className="p-4 border-b border-gray-100">
-              <Text className="text-lg font-semibold text-gray-800">
-                Settings
-              </Text>
-            </View>
-
-            {/* Settings Items */}
-            <TouchableOpacity
-              className="flex-row items-center p-4 border-b border-gray-100"
-              activeOpacity={0.7}
-            >
-              <View className="w-10 h-10 bg-blue-100 rounded-full items-center justify-center mr-4">
-                <Ionicons name="person-outline" size={20} color="#3B82F6" />
-              </View>
-              <View className="flex-1">
-                <Text className="text-gray-800 font-medium">Edit Profile</Text>
-                <Text className="text-gray-500 text-sm">
-                  Update your personal information
-                </Text>
-              </View>
-              <Ionicons name="chevron-forward" size={20} color="#9CA3AF" />
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              className="flex-row items-center p-4 border-b border-gray-100"
-              activeOpacity={0.7}
-            >
-              <View className="w-10 h-10 bg-green-100 rounded-full items-center justify-center mr-4">
-                <Ionicons
-                  name="notifications-outline"
-                  size={20}
-                  color="#10B981"
-                />
-              </View>
-              <View className="flex-1">
-                <Text className="text-gray-800 font-medium">Notifications</Text>
-                <Text className="text-gray-500 text-sm">
-                  Manage your notification preferences
-                </Text>
-              </View>
-              <Ionicons name="chevron-forward" size={20} color="#9CA3AF" />
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              className="flex-row items-center p-4 border-b border-gray-100"
-              activeOpacity={0.7}
-            >
-              <View className="w-10 h-10 bg-purple-100 rounded-full items-center justify-center mr-4">
-                <Ionicons name="shield-outline" size={20} color="#8B5CF6" />
-              </View>
-              <View className="flex-1">
-                <Text className="text-gray-800 font-medium">
-                  Privacy & Security
-                </Text>
-                <Text className="text-gray-500 text-sm">
-                  Manage your privacy settings
-                </Text>
-              </View>
-              <Ionicons name="chevron-forward" size={20} color="#9CA3AF" />
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              className="flex-row items-center p-4"
-              activeOpacity={0.7}
-            >
-              <View className="w-10 h-10 bg-orange-100 rounded-full items-center justify-center mr-4">
-                <Ionicons
-                  name="help-circle-outline"
-                  size={20}
-                  color="#F97316"
-                />
-              </View>
-              <View className="flex-1">
-                <Text className="text-gray-800 font-medium">
-                  Help & Support
-                </Text>
-                <Text className="text-gray-500 text-sm">
-                  Get help and contact support
-                </Text>
-              </View>
-              <Ionicons name="chevron-forward" size={20} color="#9CA3AF" />
-            </TouchableOpacity>
           </View>
 
           {/* Sign Out Button */}

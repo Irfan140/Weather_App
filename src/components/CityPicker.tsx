@@ -14,7 +14,7 @@ interface CityData {
   name: string;
   stateCode: string;
   countryCode: string;
-  isCountry?: boolean; // 新增属性，用于区分城市和国家
+  isCountry?: boolean;
   latitude?: number;
   longitude?: number;
 }
@@ -22,7 +22,7 @@ interface CityData {
 interface CityPickerProps {
   selectedCity: CityData | null;
   onSelectCity: (city: CityData) => void;
-  countryCode: string; // 国家代码，用于获取该国家的城市
+  countryCode: string;
   placeholder?: string;
   autoSelect?: boolean;
 }
@@ -44,8 +44,8 @@ export default function CityPicker({
         stateCode: city.stateCode,
         countryCode: city.countryCode,
         isCountry: false,
-        latitude: parseFloat(city.latitude),
-        longitude: parseFloat(city.longitude),
+        latitude: city.latitude ? parseFloat(city.latitude) : 0,
+        longitude: city.longitude ? parseFloat(city.longitude) : 0,
       })) || [];
 
     if (cities.length === 0) {
@@ -53,14 +53,18 @@ export default function CityPicker({
       const city1 = Country.getCountryByCode(countryCode);
       console.log("city1", city1);
 
+      if (!city1) {
+        return [];
+      }
+
       return [
         {
           name: city1.name,
           stateCode: countryCode,
           countryCode: countryCode,
           isCountry: true,
-          latitude: parseFloat(city1.latitude),
-          longitude: parseFloat(city1.longitude),
+          latitude: city1.latitude ? parseFloat(city1.latitude) : 0,
+          longitude: city1.longitude ? parseFloat(city1.longitude) : 0,
         },
       ];
     }
@@ -75,7 +79,7 @@ export default function CityPicker({
       return cities;
     }
     return cities.filter((city) =>
-      city.name.toLowerCase().includes(searchQuery.toLowerCase())
+      city.name.toLowerCase().includes(searchQuery.toLowerCase()),
     );
   }, [searchQuery, cities]);
 

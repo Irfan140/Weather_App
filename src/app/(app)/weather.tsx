@@ -292,8 +292,8 @@ export default function WeatherPage() {
                   {index === 0
                     ? "Today"
                     : index === 1
-                    ? "Tomorrow"
-                    : `In ${index + 1} days`}
+                      ? "Tomorrow"
+                      : `In ${index + 1} days`}
                 </Text>
                 <Text className="text-3xl">
                   {getWeatherIcon(weatherData.daily.weather_code[index])}

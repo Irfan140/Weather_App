@@ -326,7 +326,7 @@ CountryPickerProps) {
     return countries.filter(
       (country) =>
         country.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        country.code.toLowerCase().includes(searchQuery.toLowerCase())
+        country.code.toLowerCase().includes(searchQuery.toLowerCase()),
     );
   }, [searchQuery, countries]);
 

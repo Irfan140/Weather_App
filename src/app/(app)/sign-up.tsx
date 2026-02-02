@@ -90,7 +90,7 @@ export default function SignUpScreen() {
         console.error(JSON.stringify(signUpAttempt, null, 2));
         Alert.alert(
           "Verification Failed",
-          "Please check your code and try again"
+          "Please check your code and try again",
         );
       }
     } catch (err) {
@@ -99,7 +99,7 @@ export default function SignUpScreen() {
       console.error(JSON.stringify(err, null, 2));
       Alert.alert(
         "Verification Failed",
-        "Please check your code and try again"
+        "Please check your code and try again",
       );
     } finally {
       setIsLoading(false);

@@ -40,25 +40,24 @@ interface WeatherModalProps {
 
 const { width } = Dimensions.get("window");
 
-// 天气代码到图标的映射
 const getWeatherIcon = (code: number, isDay: number = 1) => {
-  if (isDay === 0) return "🌙"; // 夜晚
+  if (isDay === 0) return "🌙";
 
-  if (code === 0) return "☀️"; // 晴天
-  if (code >= 1 && code <= 3) return "🌤️"; // 多云
-  if (code >= 45 && code <= 48) return "🌫️"; // 雾
-  if (code >= 51 && code <= 55) return "🌧️"; // 小雨
-  if (code >= 56 && code <= 57) return "🌨️"; // 雨夹雪
-  if (code >= 61 && code <= 65) return "🌧️"; // 雨
-  if (code >= 66 && code <= 67) return "🌨️"; // 雨夹雪
-  if (code >= 71 && code <= 75) return "❄️"; // 雪
-  if (code >= 77 && code <= 77) return "❄️"; // 雪粒
-  if (code >= 80 && code <= 82) return "🌧️"; // 阵雨
-  if (code >= 85 && code <= 86) return "🌨️"; // 阵雪
-  if (code >= 95 && code <= 95) return "⛈️"; // 雷暴
-  if (code >= 96 && code <= 99) return "⛈️"; // 雷暴冰雹
+  if (code === 0) return "☀️";
+  if (code >= 1 && code <= 3) return "🌤️";
+  if (code >= 45 && code <= 48) return "🌫️";
+  if (code >= 51 && code <= 55) return "🌧️";
+  if (code >= 56 && code <= 57) return "🌨️";
+  if (code >= 61 && code <= 65) return "🌧️";
+  if (code >= 66 && code <= 67) return "🌨️";
+  if (code >= 71 && code <= 75) return "❄️";
+  if (code >= 77 && code <= 77) return "❄️";
+  if (code >= 80 && code <= 82) return "🌧️";
+  if (code >= 85 && code <= 86) return "🌨️";
+  if (code >= 95 && code <= 95) return "⛈️";
+  if (code >= 96 && code <= 99) return "⛈️";
 
-  return "🌤️"; // 默认
+  return "🌤️";
 };
 
 export default function WeatherModal({
@@ -88,13 +87,11 @@ export default function WeatherModal({
         />
 
         <View className="bg-white rounded-t-3xl min-h-[50%]">
-          {/* 拖拽指示器 */}
           <View className="items-center py-3">
             <View className="w-12 h-1 bg-gray-300 rounded-full" />
           </View>
 
           <View className="px-6 pb-6">
-            {/* 测试内容 */}
             <View className="items-center mb-6">
               <Text className="text-2xl font-bold text-gray-800 mb-1">
                 {cityName}
@@ -102,7 +99,6 @@ export default function WeatherModal({
               <Text className="text-gray-600 text-base">{countryName}</Text>
             </View>
 
-            {/* 简化的天气显示 */}
             <View className="bg-blue-500 rounded-3xl p-6 mb-6">
               <Text className="text-white text-4xl font-bold text-center">
                 {Math.round(current.temperature_2m)}°
@@ -112,7 +108,6 @@ export default function WeatherModal({
               </Text>
             </View>
 
-            {/* 关闭按钮 */}
             <TouchableOpacity
               onPress={onClose}
               className="bg-gray-200 rounded-xl py-4 items-center"

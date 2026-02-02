@@ -30,7 +30,7 @@ interface CityData {
 
 export default function Index() {
   const [selectedCountry, setSelectedCountry] = useState<CountryData | null>(
-    null
+    null,
   );
   const [selectedCity, setSelectedCity] = useState<CityData | null>(null);
   // const [isLoading, setIsLoading] = useState(false);
