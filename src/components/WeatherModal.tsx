@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  View,
-  Text,
-  Modal,
-  TouchableOpacity,
-  SafeAreaView,
-  ScrollView,
-  Dimensions,
-} from "react-native";
+import { View, Text, Modal, TouchableOpacity, Dimensions } from "react-native";
 
 interface WeatherData {
   current: {

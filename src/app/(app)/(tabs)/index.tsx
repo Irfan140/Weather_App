@@ -1,17 +1,9 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  TouchableOpacity,
-  Alert,
-  ScrollView,
-} from "react-native";
-import React, { useEffect, useState } from "react";
-import { Country, State, City } from "country-state-city";
+import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import { useState } from "react";
 import CountryPicker from "../../../components/CountryPicker";
 import CityPicker from "../../../components/CityPicker";
-import WeatherModal from "../../../components/WeatherModal";
 import { router } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 interface CountryData {
   code: string;
@@ -33,9 +25,6 @@ export default function Index() {
     null,
   );
   const [selectedCity, setSelectedCity] = useState<CityData | null>(null);
-  // const [isLoading, setIsLoading] = useState(false);
-  const [weatherData, setWeatherData] = useState<any>(null);
-  const [showWeatherModal, setShowWeatherModal] = useState(false);
 
   const handleCountrySelect = (country: CountryData) => {
     setSelectedCountry(country);

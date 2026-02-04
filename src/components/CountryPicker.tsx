@@ -6,10 +6,9 @@ import {
   TouchableOpacity,
   Modal,
   FlatList,
-  SafeAreaView,
-  Dimensions,
 } from "react-native";
 import { Country } from "country-state-city";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 interface CountryData {
   code: string;

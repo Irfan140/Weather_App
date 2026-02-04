@@ -2,15 +2,14 @@ import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
-  SafeAreaView,
   TouchableOpacity,
   Alert,
   ScrollView,
   ActivityIndicator,
-  Image,
 } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 interface WeatherData {
   current: {
@@ -134,9 +133,6 @@ export default function WeatherPage() {
       </SafeAreaView>
     );
   }
-
-  // const current = weatherData.weatherData.current;
-  // const daily = weatherData.weatherData.daily;
 
   return (
     <SafeAreaView className="flex-1 bg-gray-50">

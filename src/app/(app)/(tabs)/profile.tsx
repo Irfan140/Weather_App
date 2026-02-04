@@ -1,7 +1,6 @@
 import {
   View,
   Text,
-  SafeAreaView,
   TouchableOpacity,
   Alert,
   ScrollView,
@@ -10,6 +9,7 @@ import {
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { useAuth, useUser } from "@clerk/clerk-expo";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function ProfilePage() {
   const { signOut } = useAuth();

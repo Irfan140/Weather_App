@@ -3,23 +3,22 @@ import { Link, useRouter } from "expo-router";
 import {
   KeyboardAvoidingView,
   Platform,
-  SafeAreaView,
   Text,
   TextInput,
   TouchableOpacity,
   View,
   Alert,
-  Image,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Page() {
   const { signIn, setActive, isLoaded } = useSignIn();
   const router = useRouter();
 
-  const [emailAddress, setEmailAddress] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [emailAddress, setEmailAddress] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   // Handle the submission of the sign-in form
   const onSignInPress = async () => {

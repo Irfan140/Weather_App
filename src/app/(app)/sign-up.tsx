@@ -1,6 +1,4 @@
-import * as React from "react";
 import {
-  SafeAreaView,
   Text,
   TextInput,
   TouchableOpacity,
@@ -8,20 +6,21 @@ import {
   Alert,
   KeyboardAvoidingView,
   Platform,
-  Image,
 } from "react-native";
 import { useSignUp } from "@clerk/clerk-expo";
 import { Link, useRouter } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { useState } from "react";
 
 export default function SignUpScreen() {
   const { isLoaded, signUp, setActive } = useSignUp();
   const router = useRouter();
 
-  const [emailAddress, setEmailAddress] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [pendingVerification, setPendingVerification] = React.useState(false);
-  const [code, setCode] = React.useState("");
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [emailAddress, setEmailAddress] = useState("");
+  const [password, setPassword] = useState("");
+  const [pendingVerification, setPendingVerification] = useState(false);
+  const [code, setCode] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   // Handle submission of sign-up form
   const onSignUpPress = async () => {

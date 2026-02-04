@@ -1,5 +1,5 @@
 import { Stack } from "expo-router";
-import { View, Text, ActivityIndicator, Modal } from "react-native";
+import { View, ActivityIndicator } from "react-native";
 import React from "react";
 import { useAuth } from "@clerk/clerk-expo";
 
